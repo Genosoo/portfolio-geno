@@ -41,7 +41,7 @@
     }
 
     .homeHeaderBoxRight img{
-        @apply w-[70%] lg:w-[100%] rounded-3xl 
+        @apply w-[90%] lg:w-[100%] rounded-3xl mt-10 lg:mt-0
     }
 
     .homeHeaderBtn{
@@ -59,12 +59,12 @@
 
     .homeAboutImg{
         @apply flex items-center justify-center
-         lg:w-[50%]  gap-5
+         lg:w-[50%]  gap-5 flex-col md:flex-row p-10 md:p-0
     }
 
     .homeAboutImg img{
         box-shadow: 20px 10px 5px rgba(0, 0, 0, 0.378);
-        @apply w-full lg:w-[250px] rounded-xl
+        @apply  lg:w-[250px] rounded-xl
     }
 
   
@@ -108,14 +108,14 @@
 
 
     .homeProjectBox1{
-        @apply flex gap-5 p-5 flex-wrap items-center justify-center
+        @apply flex gap-5 p-10 md:p-5 flex-wrap items-center justify-center
         
     }
 
  
 
     .homeProjectBox1 img{
-        @apply w-[200px] xl:w-[550px] hover:shadow-2xl duration-200
+        @apply  xl:w-[550px] hover:shadow-2xl duration-200
         rounded-xl
     }
 
@@ -171,10 +171,14 @@
     }
 
 
-    .contactContainer p{
+    .contactContainer .text1{
         @apply text-xs sm:text-sm lg:text-base
         dark:text-neutral-200 
-        w-[70%] text-center p-10 
+        w-[90%] md:w-[70%] text-center p-5 md:p-10 
+    }
+
+    .contactContainer .text2{
+        @apply text-sm flex items-center  mt-5 gap-2  dark:text-white
     }
 
    
