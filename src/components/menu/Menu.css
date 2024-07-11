@@ -1,0 +1,22 @@
+@tailwind components;
+
+
+
+@layer components {
+    .menuContainer{
+        @apply flex justify-around w-full  items-center
+        fixed bottom-0 p-10 
+    }
+
+    .menuBox{
+        @apply border 
+        flex items-center justify-center gap-2 p-2 rounded-full
+        dark:bg-white  bg-white
+    }
+
+    .menuBox .ant-btn{
+        @apply bg-neutral-600 text-white border-none rounded-full p-5
+    }
+
+  
+}

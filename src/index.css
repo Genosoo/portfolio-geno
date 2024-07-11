@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+body::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  height:10px;
+}
+
+body::-webkit-scrollbar-track {
+  @apply bg-slate-50 /* Color of the track */
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-neutral-500
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-700 /* Color of the thumb on hover */
+}
