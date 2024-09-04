@@ -3,8 +3,39 @@
 
 @layer components{
     .homeContainer{
-        @apply  w-full bg-white dark:bg-neutral-900
+        background: linear-gradient(333deg, #d0d0d0, #ffffff, #8e8e8e);
+        background-size: 600% 600%;
+    
+        -webkit-animation: AnimationName 30s ease infinite;
+        -moz-animation: AnimationName 30s ease infinite;
+        animation: AnimationName 30s ease infinite;
+        @apply  w-full 
         flex flex-col items-center font-poppins 
+    }
+
+    .dark .homeContainer{
+        background: linear-gradient(266deg, #46737a, #2a5c63, #386d9f);
+        background-size: 600% 600%;
+    
+        -webkit-animation: AnimationName 30s ease infinite;
+        -moz-animation: AnimationName 30s ease infinite;
+        animation: AnimationName 30s ease infinite;
+    }
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
     }
 
     .homeHeaderContainer{
@@ -83,8 +114,8 @@
 
 
     .homeAboutText p{
-        @apply text-xs sm:text-sm lg:text-base
-        dark:text-neutral-200  lg:pr-20 text-justify lg:text-start
+        @apply text-xs sm:text-sm  text-justify
+        dark:text-neutral-200  
     }
 
   
@@ -105,11 +136,40 @@
         dark:text-neutral-200  
     }
 
+    
+
 
 
     .homeProjectBox1{
-        @apply flex gap-5 p-10 md:p-5 flex-wrap items-center justify-center
+        @apply flex gap-5 p-10 flex-wrap md:p-5
+         items-center justify-center w-full 
         
+    }
+
+    .projectHeader{
+        @apply flex items-center flex-col gap-10
+    }
+    .projectHeader p{
+        @apply text-sm w-[80%] text-center
+    }
+
+    .projectBox{
+        @apply shadow-xl  w-[45%] h-[300px] bg-white dark:bg-neutral-700 p-5 rounded-xl 
+        font-poppins flex flex-col justify-between items-start pt-5
+    }
+
+    .projectBox span h3{
+        @apply font-bold uppercase text-sm 
+        dark:text-neutral-200 pb-2 text-gray-700 mb-5
+    }
+
+    .projectBox span p{
+        @apply text-xs leading-5 font-light 
+        dark:text-neutral-200 text-justify
+    }
+
+    .projectBox .ant-btn{
+        @apply font-poppins border-none rounded-full bg-blue-400 text-white 
     }
 
  

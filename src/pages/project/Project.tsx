@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import { Modal } from 'antd';
-import image1 from '../../assets/project/image.png';
-import image2 from '../../assets/project/image2.png';
-import image3 from '../../assets/project/image3.png';
+import { Modal, Button } from 'antd';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 
@@ -10,34 +7,29 @@ type Project = {
   id: number;
   title: string;
   description: string;
-  image: string;
 };
 
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Admin Dashboard',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    image: image1
+    title: 'Fleet Monitoring System',
+    description: "The Fleet Monitoring System is a comprehensive web application designed to enhance the management and tracking of a fleet of vehicles for logistics and transportation companies. This system provides real-time insights, tracking, and management features that optimize fleet operations, improve efficiency, and ensure safety."
   },
   {
     id: 2,
-    title: 'Project 2',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    image: image2
+    title: 'Registration Management System',
+    description: "The Registration Management System is a robust web application designed to streamline and automate the registration process for events, courses, conferences, and other organized activities. This system provides efficient management of participant information, payment processing, and communication, ensuring a seamless experience for both organizers and participants."
   },
   {
     id: 3,
-    title: 'Project 3',
-    description: 'Project 3 description',
-    image: image3
+    title: 'Online Voting System',
+    description: "An intuitive and secure online voting platform designed to streamline the voting process. I was responsible for the front-end development using React.js and Zustand, creating a user-friendly interface that ensures ease of use and accessibility for all users. The system includes features such as real-time vote counting, secure authentication, and detailed voting analytics."
   },
   {
     id: 4,
-    title: 'Project 4',
-    description: 'Project 4 description',
-    image: image1
-  }
+    title: 'Incident Reporting Monitoring System',
+    description: "A robust platform for reporting and monitoring incidents in real-time. I played a key role in developing the front-end using React.js and Zustand, focusing on creating an intuitive and efficient user interface. The system allows users to report incidents, track the status of their reports, and generate detailed analytics."
+  },
 ];
 
 export default function Project() {
@@ -60,17 +52,21 @@ export default function Project() {
   return (
     <ScrollAnimation animateIn='slideInUp' delay={300}>
     <div className="homeProjectContainer" id='project'>
-      <h1>Project</h1>
+       <div className="projectHeader">
+       <h1>Project</h1>
+       <p >In this project, I was responsible for creating and implementing the user interface (UI) based on the requirements and specifications from my previous work. My role encompassed several key areas, including UI design, API integration, and ensuring a seamless user experience.</p>
+       </div>
         <div className="homeProjectBox1">
           {projects.map((project) => (
-            <div 
-              key={project.id} 
-              className="homeProjectBoxImg"
-              onClick={() => showModal(project)}
-              style={{ cursor: 'pointer' }}
-            >
-              <img src={project.image} alt={project.title} />
-            </div>
+           <div className="projectBox" key={project.id} >
+              <span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </span>
+              <Button onClick={() => showModal(project)}>
+                Read More
+              </Button>
+           </div>
           ))}
         </div>  
 
@@ -83,7 +79,6 @@ export default function Project() {
           footer={null}
         >
           <div className="projectModalBox">
-          <img src={selectedProject.image} alt={selectedProject.title} style={{ width: '100%' }} />
           <p>{selectedProject.description}</p>
           </div>
         </Modal>

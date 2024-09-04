@@ -25,8 +25,8 @@ export default function Contact() {
       </ScrollAnimation>
 
       <span>
-      <a href="">LinkedIn</a>
-      <a href="">Twitter</a>
+      <a href="https://www.linkedin.com/in/geno-ureta-1b839a21a/" target="_blank">LinkedIn</a>
+      <a href="https://web.facebook.com/genojo.ureta/" target="_blank">Facebook</a>
       <a href="https://github.com/Genosoo" target="_blank">Github</a>
       </span>
     </div>

@@ -1,8 +1,18 @@
 import { Button } from 'antd'
-import image from '../../assets/home/image.png'
+import image from '../../assets/home/image1.png'
 import { LuDownload } from "react-icons/lu";
+import resume from '../../assets/resume/Resume.pdf'
 
 export default function Header() {
+  const onButtonClick = () => {
+    const pdfUrl = resume;
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Resume.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
   return (
     <div className="homeHeaderContainer" id='home'>
         <div className="homeHeaderBoxLeft animate__animated fadeInUp">
@@ -14,9 +24,7 @@ export default function Header() {
                 Explore my work, learn about my journey,
                 and let’s create something amazing together.
             </p>
-            <a href="" download>
-              <Button type="primary" className='homeHeaderBtn' icon={<LuDownload />}>Resume</Button>
-            </a>
+              <Button type="primary" className='homeHeaderBtn' onClick={onButtonClick} icon={<LuDownload />}>Resume</Button>
         </div>
 
         <div className="homeHeaderBoxRight">

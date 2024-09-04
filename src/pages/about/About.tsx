@@ -1,23 +1,9 @@
-import { useState } from 'react';
 import profile1 from '../../assets/about/image1.png';
 import profile2 from '../../assets/about/image2.png';
-import { Button, Modal } from 'antd';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function About() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
 
   return (
     <div className="homeAboutContainer" id='about'>
@@ -32,16 +18,24 @@ export default function About() {
       <ScrollAnimation className="homeAboutText" animateIn='backInRight' delay={300}>
         <h1>About</h1>
         <p>
+            I am a dedicated front-end developer with 2 years of experience crafting user-friendly interfaces. 
+            My passion lies in transforming ideas into visually stunning and highly functional web applications. 
+            With a solid foundation in modern web technologies, I ensure that every project I undertake is built to the highest standards.
+            <br />
+            <br />
+            Leveraging the power of React, I specialize in delivering high-performance applications that not only look great but also provide an exceptional user experience. My expertise allows me to create seamless, responsive, and interactive interfaces that engage users and keep them coming back for more.
+        </p>
+        {/* <p>
           Hello! I’m Geno, a frontend developer with a keen eye for design and a love for code. 
           My journey into web development started when I was in college and working with 2 years 
           of experience in a company. Since then, I’ve been on a mission to merge aesthetics 
           with technology. I believe that a great website is not just about pretty visuals but 
           also about seamless user experiences.
-        </p>
-        <Button className='homeAboutBtn' onClick={showModal}>Read More</Button>
+        </p> */}
+        {/* <Button className='homeAboutBtn' onClick={showModal}>Read More</Button> */}
       </ScrollAnimation>
 
-      <Modal
+      {/* <Modal
         title="About Me"
         visible={isModalVisible}
         onOk={handleOk}
@@ -77,7 +71,7 @@ export default function About() {
             <li>Performance Optimization: Enhancing site speed and performance for a better user experience.</li>
           </ul>
         </p>
-      </Modal>
+      </Modal> */}
     </div>
   );
 }
